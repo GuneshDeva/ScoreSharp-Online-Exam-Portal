@@ -1,0 +1,48 @@
+<button class="arrowbutton" (click)="goBack()">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+
+<!-- Pie Chart Section -->
+<div>
+  <div class="col-lg-4 canvasheading">
+    <h1>Users Exam Result (Pie Chart)</h1>
+  </div>
+
+  <div class="canvassearch">
+
+    <ng-container *ngIf="showExamCodeInput">
+      <mat-form-field appearance="fill" class="left">
+        <mat-label>Select an exam code</mat-label>
+        <input type="text" matInput [formControl]="codeControl" [matAutocomplete]="auto" />
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="exampiechart(examcode1)">
+          <mat-option *ngFor="let examCode of filteredCodes" [value]="examCode">
+            {{ examCode }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <button class="btn-sm btn-secondary toggle ml-4" type="button" (click)="toggleInput()">Switch to User Name</button>
+    </ng-container>
+
+    <ng-container *ngIf="!showExamCodeInput">
+
+      <mat-form-field appearance="fill" class="left">
+        <mat-label>Select an user name</mat-label>
+        <input type="text" matInput [formControl]="nameControl" [matAutocomplete]="auto2" />
+        <mat-autocomplete #auto2="matAutocomplete" (optionSelected)="userpiechart(examcode1)">
+          <mat-option *ngFor="let userName of filterednames" [value]="userName">
+            {{ userName }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <button class="btn-sm btn-secondary toggle ml-4" type="button" (click)="toggleInput()">Switch to Exam Code</button>
+    </ng-container>
+  </div>
+
+  <div class="leftcanvas" style="height: 15rem;">
+    <canvas id="abc"></canvas>
+  </div>
+  <div class="rightcanvas float-right" style="height: 15rem;">
+    <canvas id="def"></canvas>
+</div>
+</div>
+

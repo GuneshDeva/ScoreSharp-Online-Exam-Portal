@@ -1,0 +1,27 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+button:hover{
+  background-color: white;
+  color: black;
+}
+
+mat-toolbar{
+  background: #1f2937;
+  color: white;
+  /* position: fixed; */
+}
+
+body {
+  background: #eee;
+}
+
+.header{
+  color: white;
+  font-size: 25px;
+  margin-left: 10px;
+}
+img{
+  height: 50%;
+}

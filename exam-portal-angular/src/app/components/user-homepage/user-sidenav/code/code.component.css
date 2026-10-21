@@ -1,0 +1,26 @@
+.button
+{
+  display: flex;
+  /* align-items: center; */
+  margin-left:50%;
+  margin-top: 1rem;
+}
+
+.maindiv{
+  margin-left: 10%;
+  margin-top: 3rem;
+  width: 80%;
+}
+
+.button:hover{
+  opacity: 70%;
+  background-color: green;
+}
+body
+  {
+    background-color: rgb(203, 220, 236);
+  }
+
+  @media only screen  and (max-width: 767px) {
+    
+  }

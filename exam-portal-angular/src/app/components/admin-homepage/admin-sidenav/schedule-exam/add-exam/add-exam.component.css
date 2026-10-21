@@ -1,0 +1,14 @@
+.radio_button{
+    height:1rem;
+    width:1rem;
+    /* font-size:2rem; */
+}
+.ExamForm{
+    width: 45%;
+}
+
+.arrowbutton{
+  border: none;
+  margin-right: 1rem;
+  background-color: rgb(203, 220, 236);
+}

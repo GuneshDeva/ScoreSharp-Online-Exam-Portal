@@ -1,0 +1,51 @@
+
+.bootstrap-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+.content-container {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: hidden;
+}
+
+nav {
+  width: 200px;
+  overflow-y: scroll;
+  overflow: hidden !important;
+}
+
+main {
+  width: 50rem;
+  flex-grow: 1;
+  overflow-y: scroll;
+  /* overflow-x: scroll; */
+  margin-left:1rem;
+  margin-top: 0.3rem;
+
+}
+
+
+nav::-webkit-scrollbar,
+main::-webkit-scrollbar {
+  width: .5rem;
+}
+
+nav::-webkit-scrollbar-track,
+main::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+nav::-webkit-scrollbar-thumb,
+main::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+
+*{
+  background-color: rgb(203, 220, 236);
+}
+

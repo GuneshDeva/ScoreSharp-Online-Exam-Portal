@@ -1,0 +1,61 @@
+<body>
+
+ <div class="bootstrap-wrapper">
+  <header>
+    <app-header></app-header>
+  </header>
+
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-4">
+            <div>
+              <img src="assets/Password.svg" class="usericon" alt="">
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+          <form [formGroup]="loginForm"  (ngSubmit)="login(this.userLogin)" class="mat-elevation-z8" >
+            <mat-card class="cardform">
+              <p class="text-center">
+                <span class="right"><h1 style="font-weight: bold; margin-top: 1rem;">Login</h1></span>
+            </p>
+            <div class="form-group">
+              <label for="Email" style="font-weight: bold;">Email address</label>
+              <input type="email" class="form-control" id="Email" placeholder="Enter email" [(ngModel)]="userLogin.email" name="email" formControlName="lemail" [ngClass]="{ 'is-invalid': (submitted && f.lemail.errors ) || (f.lemail.touched && f.lemail.errors) }">
+              <div *ngIf="submitted || f.lemail.touched && f.lemail.errors" class="invalid-feedback">
+                <div *ngIf="f.lemail.errors?.required">Email is mandatory</div>
+                <div *ngIf="f.lemail.errors?.email">Email must be a valid email address</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Password" style="font-weight: bold;">Password</label>
+              <input  matInput [type]="hide ? 'password' : 'text'" type="password" class="form-control" id="Password" placeholder="Password" [(ngModel)]="userLogin.password" name="password" formControlName="lpassword" [ngClass]="{ 'is-invalid': (submitted && f.lpassword.errors) || (f.lpassword.touched && f.lpassword.errors)}">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" class="float-right hideshow">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <div *ngIf="submitted || f.lpassword.touched && f.lpassword.errors" class="invalid-feedback">
+                <div *ngIf="f.lpassword.errors?.required">Password is mandatory</div>
+                <div *ngIf="f.lpassword.errors?.minlength">Min 6 letter required</div>
+                <div *ngIf="f.lpassword.errors?.pattern">Please, Remove space's</div>
+             </div>
+            </div>
+
+            <div class="form-group text-center mt-2">
+
+            <button class="btn btn-success btn-sm" >Login</button>
+            <button type="reset" class="btn btn-primary btn-sm ml-4" >Clear</button>
+            </div>
+            <br>
+            <div class="text-center">
+              <p>Did you forgot your password?<a routerLink="/reset"> Reset password</a></p>
+            </div>
+            <div class="text-center">
+              <p>Don't have an account register here? <a routerLink="/signup">Create new account</a></p>
+            </div>
+          </mat-card>
+          </form>
+        </div>
+       </div>
+    </div>
+ </div>
+</body>

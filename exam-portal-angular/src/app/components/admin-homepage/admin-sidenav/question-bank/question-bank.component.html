@@ -1,0 +1,134 @@
+<div *ngIf="showCodingQuestions" class="mt-4 mb-4">
+  <div *ngIf="manageQuestions" >
+  <div class="allign" *ngIf="showQuestion" >
+<div class="warapper">
+   <div class="div1 ml-2">
+        <mat-card class="card ml-2" >
+          <mat-card-header>
+            <div mat-card-avatar><img src="assets/Conversation.svg" alt="icon"></div>
+
+            <mat-card-title class="text-center ml-2">ADD QUESTION</mat-card-title>
+
+            <mat-card-subtitle class="text-center">adding questions</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>
+               Adding the question based on the subject and Topic
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button id="add-button" style="margin-left:6rem;" mat-button (click)="loadAddQuestionPage(false)" >
+              <mat-icon>add_circle_outline</mat-icon>Add question</button>
+          </mat-card-actions>
+        </mat-card>
+   </div>
+
+
+   <!-- //-------------------------------------// -->
+   <div class="div2">
+    <mat-card class="card ml-5">
+      <mat-card-header>
+        <div mat-card-avatar><img src="assets/Folder.svg" alt=""></div>
+        <mat-card-title class="text-center ml-2">MANAGE QUESTION</mat-card-title>
+        <mat-card-subtitle class="text-center ml-2">Editing questions</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content class="mgm">
+        <p class="mgp">Manage the question based on the subject and Topic</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button id="add-button" style="margin-left:6rem;" mat-button (click)="loadManageQuestionPage(false)">
+          <mat-icon>add_circle_outline</mat-icon>Edit question</button>
+      </mat-card-actions>
+    </mat-card>
+   </div>
+ <!-- //--------------------------------------// -->
+
+   <div class="div3 ml-2">
+    <mat-card class="card ml-2" >
+      <mat-card-header>
+        <div mat-card-avatar><img src="assets/Code.svg" alt=""></div>
+        <mat-card-title class="text-center ml-2">ADD CODING QUESTION</mat-card-title>
+        <mat-card-subtitle class="text-center">adding coding questions</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>
+           Adding the question based on the subject and Topic
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button id="add-button" style="margin-left:6rem;" mat-button (click)="loadAddCodingQuestionPage(false)" >
+          <mat-icon>add_circle_outline</mat-icon>Add coding question</button>
+      </mat-card-actions>
+    </mat-card>
+   </div>
+</div>
+
+<div class="div4">
+  <mat-card class="card ml-5">
+    <mat-card-header>
+      <div mat-card-avatar><img src="assets/Excel.svg" alt=""></div>
+      <mat-card-title class="text-center ml-2">UPLOAD QUESTIONS</mat-card-title>
+      <mat-card-subtitle class="text-center ml-2">Uploading files</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="mgm">
+      <p class="mgp">Upload a excel file to add questions to repository</p>
+    </mat-card-content>
+    <mat-card-actions>
+
+        <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+        <input accept=".xlsx, .xls " hidden (change)="onFileSelected($event)" #fileInput type="file">
+        <span class="file-name">{{selectedFile?.name}}</span>
+        <!-- <input id="fileUpload"  type="file" accept=".xlsx, .xls " (change)="onFileSelected($event)" /> -->
+        <button id="add-button"  mat-button (click)="uploadFile()"><mat-icon>upload</mat-icon>Upload</button>
+
+
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+
+<!-- //--------------------------------------// -->
+
+<div class="div5">
+  <mat-card class="card ml-5">
+    <mat-card-header>
+      <div mat-card-avatar><img src="assets/Download-Excel.svg" alt=""></div>
+      <mat-card-title class="text-center ml-2">DOWNLOAD EXCEL SHEET</mat-card-title>
+      <mat-card-subtitle class="text-center ml-2">Download Excel file format</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="mgm">
+      <p class="mgp">
+        Download Excel file and add Questions to it
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button id="add-button" style="margin-left:6rem;" mat-button (click)="generateExcelFile()">
+        <mat-icon>download</mat-icon>Download Excel File
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<!-- //--------------------------------------// -->
+</div>
+</div>
+</div>
+
+  <div class="allign" *ngIf="!showCodingQuestions">
+    <app-add-coding-question (loadAddCodingQuestionPage)="loadAddCodingQuestionPage(true)"></app-add-coding-question>
+  </div>
+
+    <div class="allign" *ngIf="!showQuestion">
+      <app-addquestion (loadAddQuestionPage)="loadAddQuestionPage(true)"></app-addquestion>
+    </div>
+    <div class="allign" *ngIf="!manageQuestions">
+      <app-manageQuestion (loadManageQuestionPage)="loadManageQuestionPage(true)"></app-manageQuestion>
+    </div>
+
+

@@ -1,0 +1,16 @@
+/.metadata/
+# IDE settings
+.idea/
+.vscode/
+*.iml
+
+# Maven build output
+**/target/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Windows shortcuts
+*.lnk

@@ -1,0 +1,100 @@
+<button class="arrowbutton" (click)="goBack()"> <mat-icon>arrow_back</mat-icon>
+</button>
+<div id="createpaper-form" class="ml-2">
+<div class="form-group maindiv">
+  <label for="formGroupExampleInput" required>Enter the paper name</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter the paper name" [(ngModel)]="createPaper.name" name="name" (ngModelChange)="checkAllFieldsFilled()" ng-required="true">
+
+</div>
+<div class="form-group">
+  <label for="noOfQuestions">Enter no of questions</label>
+  <input type="text" class="form-control" id="noOfQuestions" placeholder="Enter no of questions" [(ngModel)]="createPaper.numberOfQuestions"  [(ngModel)]="noOfQuestions" name="noofquestions" (ngModelChange)="checkAllFieldsFilled()">
+  <div class="invalid-feedback" id="noOfQuestionsError">
+    Please enter only positive numbers
+  </div>
+</div>
+<div class="form-group">
+  <label for="totalMarks">Enter total marks</label>
+  <input type="text" class="form-control" id="totalMarks" placeholder="Enter total marks" [(ngModel)]="createPaper.totalMarks" name="total_Marks" (ngModelChange)="checkAllFieldsFilled()">
+  <div class="invalid-feedback" id="totalMarksError">
+    Please enter only positive numbers
+  </div>
+</div>
+</div>
+<mat-form-field appearance="fill" class="ml-2">
+  <mat-label>Select a subject</mat-label>
+  <mat-select [(ngModel)]="selectedsubject" name="selectedSubject" (selectionChange)="onSubjectSelection()" (ngModelChange)="checkAllFieldsFilled()">
+    <mat-option *ngFor="let subject of uniqueSubjectNames" [value]="subject">{{ subject }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="ml-4">
+  <mat-label>Select a topic</mat-label>
+  <mat-select [(ngModel)]="subject_id" name="subject_id"  [formControl]="subjectControl" (selectionChange)="getquestions(subject_id)" (ngModelChange)="checkAllFieldsFilled()">
+    <mat-option *ngFor="let subject of  filteredTopics" [value]="subject.id">{{ subject.description }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- <table class="table table-striped"*ngIf="allFieldsFilled && selectedsubject != 'CODING'" >    this line is new - the below lone is old one  -->
+<table class="table table-striped" *ngIf="allFieldsFilled && selectedsubject?.toLowerCase() !== 'coding'">
+  <thead>
+    <!-- [formControl]="subjectControl" -->
+    <tr>
+      <th>ID</th>
+      <th>Question</th>
+      <th>Option A</th>
+      <th>Option B</th>
+      <th>Option C</th>
+      <th>Option D</th>
+      <th>Answer</th>
+      <th>Level</th>
+      <th>Select<th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let question of question123 ;let i=index">
+     <td>{{i+1}}</td>
+      <td [innerHTML]="question.content"></td>
+      <td>{{question.optionA}}</td>
+      <td>{{question.optionB}}</td>
+      <td>{{question.optionC}}</td>
+      <td>{{question.optionD}}</td>
+      <td>{{question.answer}}</td>
+      <td>{{question.qtype}}</td>
+      <td>
+
+        <mat-checkbox [disabled]="isDisabled" class="example-margin" color="primary" (change)="checkboxChanged($event,question.id,question.subject?.name)"
+        [checked]="questionsIdArray.includes(question.id)" ></mat-checkbox>
+
+
+
+</td>
+</tr>
+</tbody>
+ </table>
+<table class="table table-striped"
+       *ngIf="allFieldsFilled && selectedsubject?.toLowerCase() === 'coding'">
+
+  <thead >
+    <tr>
+      <th>S.No</th>
+      <th>Question</th>
+      <th>Select</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let question of codingQuestion let i=index">
+      <td>{{i+1}}</td>
+      <td [innerHTML]="question.content"></td>
+      <td>
+        <mat-checkbox [disabled]="isDisabled" class="example-margin" color="primary" (change)="checkboxChanged($event,question.id,question.subject?.name)"
+        [checked]="codingQuestionsIdArray.includes(question.id!)"></mat-checkbox>
+</td>
+</tr>
+</tbody>
+ </table>
+
+<div>
+  <button *ngIf="allFieldsFilled"  type="button" class="btn btn-primary" data-dismiss="modal" (click)="addpaper(this.createPaper)"  >Create Paper</button>
+<button class="btn btn-dark ml-3" (click)="goBack()">Go back</button>
+</div>

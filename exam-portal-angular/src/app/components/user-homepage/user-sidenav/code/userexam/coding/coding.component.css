@@ -1,0 +1,244 @@
+.code-editor{
+    width: 70%;
+    margin-left: 2%;
+}
+
+
+/* This is the New code added 27.08.2026 */
+/* =========================================
+   PROGRAMMING LANGUAGE
+   ========================================= */
+
+.language-row {
+  margin-bottom: 10px;
+}
+
+.language-select {
+  width: 100%;
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+   ========================================= */
+
+.section-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ddd;
+}
+
+
+/* =========================================
+   CODE EDITOR
+   ========================================= */
+
+.code-editor {
+  width: 100%;
+}
+
+ngx-codemirror {
+  display: block;
+  width: 100%;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.button-section {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+
+/* =========================================
+   TEST CASE COUNT
+   ========================================= */
+
+.testcase-count {
+  font-size: 17px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.testcase-count span {
+  margin-left: 8px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   OUTPUT + RESULT SECTION
+   ========================================= */
+
+.result-section {
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+
+/* =========================================
+   OUTPUT CARD
+   ========================================= */
+
+.output-card {
+  height: 100%;
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   RESULT CARD
+   ========================================= */
+
+.result-card {
+  height: 100%;
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   CARD HEADINGS
+   ========================================= */
+
+.card-heading {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+
+/* =========================================
+   OUTPUT BOX
+   ========================================= */
+
+.output-box {
+  width: 100%;
+  min-height: 180px;
+  resize: vertical;
+
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 15px;
+
+  padding: 12px;
+
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+/* =========================================
+   RESULT ROW
+   ========================================= */
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 5px;
+
+  border-bottom: 1px solid #eee;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+
+.result-label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+.result-value {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+
+/* =========================================
+   STATUS
+   ========================================= */
+
+.status {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+
+.status-accepted {
+  color: #198754;
+}
+
+
+.status-wrong {
+  color: #dc3545;
+}
+
+
+.status-error {
+  color: #dc3545;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .result-section .col-md-6 {
+    margin-bottom: 20px;
+  }
+
+  .output-card,
+  .result-card {
+    width: 100%;
+  }
+
+}
+
+.coding-instruction {
+  margin: 10px 0 15px 0;
+  padding: 12px 16px;
+  border: 1px solid #d6e4f0;
+  border-radius: 6px;
+  background-color: #f5f9fc;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.coding-instruction strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.coding-instruction code {
+  display: block;
+  margin: 6px 0;
+  padding: 8px 10px;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 14px;
+}

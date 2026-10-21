@@ -1,0 +1,64 @@
+.card {
+  width: 25rem;
+  height:10rem;
+  padding-left:1rem;
+  padding-right:1rem;
+  border-radius: 1rem;
+  /* background-color: rgb(104, 179, 249); */
+  background-color: #ffffff;
+  text-align:center;
+
+}
+
+.card:hover{
+  transform: translateY(-2px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.allign{
+     display: flex;
+}
+#add-button:hover{
+  background-color: #1f2937;
+  color: white;
+}
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns:repeat(2,2fr);
+}
+
+.div2{
+  margin-top: -10rem;
+  margin-left: 26rem;
+}
+
+.div3{
+  margin-top: 2rem;
+}
+
+.mgm{
+  padding: 0rem;
+}
+
+.div4{
+  margin-top: 12rem;
+  margin-left: -28rem;
+}
+
+.div5{
+  margin-top:24rem;
+  margin-left:-56rem;
+}
+/* input[type="file"]:hover{
+  background-color: #1f2937;
+  color: white;
+  cursor: pointer;
+
+} */
+.file-name:hover{
+
+  margin-left: rem; /* or whatever margin you require */
+}

@@ -1,0 +1,327 @@
+.righttop{
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  height: 5rem;
+  /* background-color: blue; */
+}
+
+.rigthbottom{
+  margin-top: 1rem;
+  margin-right: 2rem;
+  height: 25rem;
+  overflow-y: scroll;
+  border: .1rem solid black;
+  background-color: rgb(241, 231, 236);
+}
+main::-webkit-scrollbar,
+.rigthbottom::-webkit-scrollbar {
+  width: .5rem;
+}
+
+main::-webkit-scrollbar-track,
+.rigthbottom::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+main::-webkit-scrollbar-thumb,
+.rigthbottom::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+.lefttop{
+  margin-top:1rem;
+  margin-left:10rem;
+  height: 5rem;
+  /* background-color: rgb(235, 52, 214); */
+}
+
+.leftbottom{
+  padding: 1rem;
+  height: 25rem;
+  /* background-color: rgb(141, 235, 193); */
+}
+
+
+.submitbutton:hover{
+  opacity: 70%;
+  transition-duration:0.2s;
+  font-size:1rem;
+  /* margin-left: 10rem; */
+  background-color:red;
+}
+
+.submitbutton{
+  /* width:100%; */
+  display:flex;
+  align-items:center;
+  text-align:center;
+  /* margin-left: 43rem; */
+  /* margin-top: -3rem; */
+}
+
+
+.option{
+  margin-left: 1rem;
+}
+
+
+
+.question-list__items {
+  display: flex;
+  margin-top: 1rem;
+  /* background-color: aqua; */
+  height: 90%;
+}
+
+.question-list__items li a:hover{
+  cursor:  pointer;
+}
+
+.question-list__items ul li {
+  display: flex;
+  float: left;
+  width: 25%;
+  /* background-color: rgb(23, 229, 37); */
+  margin-bottom: 1rem;
+}
+
+
+.question-list ul{
+  width: 100%;
+  list-style-type: none;
+}
+
+.radiobutton::after{
+  color: aqua;
+}
+
+.subject{
+  margin-left:10rem;
+}
+
+.subject-button{
+  opacity:0.5;
+}
+
+.subject-button.active{
+  opacity: 1;
+  background-color:blue;
+}
+
+.active{
+  background-color: aqua;
+
+}
+
+.subject-button:hover{
+  opacity:1;
+
+}
+
+.numberOfQuestion{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.arrow{
+  padding: 0;
+border: none;
+background: none;
+color: blue;
+}
+
+.radiobutton{
+  height:1rem;
+  width: 1rem;
+  font-size: 1rem;
+}
+
+.radiobutton:hover{
+  cursor: pointer;
+}
+
+.deselect{
+   /* margin-top: 5rem; */
+  margin-left:1rem;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar{
+  background: #1f2937;
+  color: white;
+  /* position: fixed; */
+}
+img{
+  height: 38px;
+  width: 38px;
+}
+
+#timer{
+  margin-top: 10px;
+}
+
+.question{
+  margin-left: 50px;
+
+}
+
+h4{
+  background-color: rgb(86, 229, 229);
+  border: 0.1rem solid black ;
+  width: 60%;
+  padding-left:0.2rem;
+}
+
+.totalquestion{
+  margin-top: 0.2rem;
+}
+
+
+
+/* CSS for small screens (up to 767px) */
+@media only screen  and (max-width: 767px) {
+  .bootstrap-wrapper{
+    height:32rem;
+    width: 23rem;
+    /* padding-left: 3%; */
+   }
+   .usericon{
+    width: 50%;
+    height: 11%;
+    position: relative;
+    bottom: 100px;
+    left: 24%;
+   }
+   .register{
+    position: absolute;
+    top: 39%;
+    padding: 0;
+    width: 19rem;
+}
+.cardform{
+  width: 23rem;
+  height: 120%;
+
+ }
+
+
+}
+
+
+
+/* CSS for large screens (992px and above) */
+@media only screen and (max-width: 992px) {
+  .bootstrap-wrapper{
+    height:32rem;
+    width: 27rem;
+
+   }
+
+
+}
+
+@media (min-width: 540px ) {
+  .col-md-9 {
+    padding-left: 1rem;
+  }
+}
+
+
+/* The below code is added newly -27.08.2026 */
+
+/* =========================================
+   CODING QUESTION
+   ========================================= */
+
+.coding-question-container {
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+
+/* Question Number */
+
+.coding-question-number {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+
+/* Question Card */
+
+.coding-question-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  padding: 20px 24px;
+  margin-bottom: 25px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Question Heading */
+
+.coding-question-heading {
+  font-size: 19px;
+  font-weight: 700;
+
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+
+  border-bottom: 2px solid #ddd;
+}
+
+
+/* Question Content */
+
+.coding-question-content {
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: #333;
+
+  word-wrap: break-word;
+}
+
+
+/* Make paragraphs inside the question look clean */
+
+.coding-question-content p {
+  margin-bottom: 10px;
+}
+
+
+/* Make code snippets inside the question readable */
+
+.coding-question-content pre {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+
+/* =========================================
+   CODING EDITOR SEPARATION
+   ========================================= */
+
+.coding-question-container app-coding {
+  display: block;
+  margin-top: 10px;
+}

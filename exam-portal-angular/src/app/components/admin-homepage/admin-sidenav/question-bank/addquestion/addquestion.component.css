@@ -1,0 +1,87 @@
+th{
+  color: rgb(255, 255, 255);
+  background-color:#1f2937;
+}
+
+.card{
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+  width: 60rem;
+  padding: 1rem;
+}
+
+
+.right{
+  margin-left: 2rem;
+  /* width: 20rem; */
+}
+
+
+.questionPlaceholder{
+  width: 90%;
+}
+
+.option{
+  text-align: center;
+  width: 10rem;
+}
+
+.table{
+  width: 40rem;
+  /* margin-left: 7rem; */
+}
+
+.addButton:hover{
+  opacity: 80%;
+  font-size: 110%;
+  transition-duration: 1s;
+}
+
+.headingAnswers{
+  width: 50%;
+}
+
+.headingQuestion{
+  width: 50%;
+}
+
+#question-editor{
+  width:70%;
+}
+
+.back{
+  border: none;
+  background-color: white;
+}
+
+.back:hover{
+  transform: scale(1.2);
+}
+
+.backdown{
+  margin-top: 2rem;
+  padding-top: 2rem;
+  /* background-color: blue; */
+}
+
+.maticondown{
+  padding-top: 0.2rem;
+  margin-top: 0.5rem;
+  /* background-color: aqua; */
+}
+
+.arrowbutton{
+  border: none;
+  margin-right: 1rem;
+  background-color: rgb(203, 220, 236);
+}
+
+
+.arrow:hover{
+  transform: scale(1.2);
+}
+.level{
+  width: 50%;
+}
+
+

@@ -1,0 +1,41 @@
+#head {
+  background-color: black;
+  color: white;
+}
+
+mat-table{
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.view{
+  padding-left: 3rem;
+}
+
+.viewicon{
+  color: rgb(21, 21, 200);
+}
+
+.viewicon:hover{
+  color: rgb(17, 17, 239);
+  cursor: pointer;
+  transform: scale(1.2);
+
+
+}
+
+.delete{
+  color: rgb(209, 18, 18);
+}
+
+.delete:hover{
+  color: red;
+  cursor: pointer;
+  transform: scale(1.2);
+
+}
+
+button{
+  border: none;
+
+}

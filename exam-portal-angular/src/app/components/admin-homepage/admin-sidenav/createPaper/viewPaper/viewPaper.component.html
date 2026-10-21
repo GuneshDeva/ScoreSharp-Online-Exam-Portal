@@ -1,0 +1,134 @@
+<div>
+
+  <h1>Questions
+    <button class="float-left mr-4 arrow" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </h1>
+
+  <!-- NORMAL + CODING MIXED QUESTIONS -->
+  <table
+    class="table table-striped"
+    *ngIf="questionsArray.length > 0 && !isOnlyCodingQuestions()">
+
+    <thead>
+      <tr>
+        <th style="width:0.5rem;" class="text-center">S.No</th>
+        <th style="width:2rem;" class="text-center">Content</th>
+        <th style="width:2rem;" class="text-center">Option A</th>
+        <th style="width:2rem;" class="text-center">Option B</th>
+        <th style="width:2rem;" class="text-center">Option C</th>
+        <th style="width:2rem;" class="text-center">Option D</th>
+        <th style="width:1rem;" class="text-center">Answer</th>
+        <th style="width:1rem;" class="text-center">Level</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let question of questionsArray; let i=index">
+
+        <td class="text-center">
+          {{i+1}}
+        </td>
+
+        <td
+          [innerHTML]="question.content"
+          class="text-center">
+        </td>
+
+        <!-- Show options only for NORMAL questions -->
+        <ng-container *ngIf="question.subject?.name?.toLowerCase() !== 'coding'">
+
+          <td class="text-center">
+            {{question.optionA}}
+          </td>
+
+          <td class="text-center">
+            {{question.optionB}}
+          </td>
+
+          <td class="text-center">
+            {{question.optionC}}
+          </td>
+
+          <td class="text-center">
+            {{question.optionD}}
+          </td>
+
+          <td class="text-center">
+            {{question.answer}}
+          </td>
+
+          <td class="text-center">
+            {{question.qtype}}
+          </td>
+
+        </ng-container>
+
+        <!-- Empty cells for coding questions -->
+        <ng-container *ngIf="question.subject?.name?.toLowerCase() === 'coding'">
+
+          <td colspan="5" class="text-center">
+            Coding Question
+          </td>
+
+        </ng-container>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+
+  <!-- ONLY CODING QUESTIONS -->
+  <div *ngIf="questionsArray.length > 0 && isOnlyCodingQuestions()">
+
+    <h1>Coding Questions</h1>
+
+    <table class="table table-striped">
+
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Content</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let question of questionsArray; let i=index">
+
+          <td>{{i+1}}</td>
+
+          <td [innerHTML]="question.content"></td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

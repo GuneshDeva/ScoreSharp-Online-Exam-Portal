@@ -1,0 +1,94 @@
+<button class="arrowbutton" (click)="goBack()"> <mat-icon>arrow_back</mat-icon>
+</button>
+<div class="ExamForm ml-2">
+<div class="form-group">
+  <label for="formGroupExampleInput"><b>Enter the exam name</b></label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter the exam name" [(ngModel)]="scheduleExam.name" name="name">
+</div>
+<div class="form-group">
+  <label for="formGroupExampleInput2"><b>Enter the exam code</b></label>
+  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter the exam code" [(ngModel)]="scheduleExam.code" name="code">
+</div>
+<div class="form-group">
+  <label for="formGroupExampleInput2"><b>Enter the exam start time</b></label>
+  <!-- <input matInput type="datetime-local" id="formGroupExampleInput2" class="form-control" placeholder="Enter the exam start time" [(ngModel)]="scheduleExam.startTime"  name="startTime"> -->
+  <input matInput type="datetime-local"
+       id="formGroupExampleInput2"
+       class="form-control"
+       placeholder="Enter the exam start time"
+       [(ngModel)]="scheduleExam.startTime"
+       (ngModelChange)="calculateDuration()"
+       name="startTime">
+
+</div>
+<div class="form-group">
+  <label for="formGroupExampleInput2"><b>Enter the exam end time</b></label>
+  <!-- <input matInput type="datetime-local" class="form-control" id="formGroupExampleInput2" placeholder="Enter the exam end time" [(ngModel)]="scheduleExam.endTime"  name="endTime"> -->
+  <input matInput type="datetime-local"
+       class="form-control"
+       id="formGroupExampleInput2"
+       placeholder="Enter the exam end time"
+       [(ngModel)]="scheduleExam.endTime"
+       (ngModelChange)="calculateDuration()"
+       name="endTime">
+
+
+</div>
+
+
+<div class="form-group">
+  <label for="formGroupExampleInput2">
+    <b>Enter the exam duration (in minutes)</b>
+  </label>
+
+  <input
+    type="number"
+    class="form-control"
+    id="formGroupExampleInput2"
+    placeholder="Duration will be calculated automatically"
+    [(ngModel)]="scheduleExam.examDuration"
+    name="examduration">
+
+  <small style="color: gray;">
+    Duration is automatically calculated from start and end time. You can edit it manually if required.
+  </small>
+</div>
+
+
+
+
+<div class="form-group">
+  <label for="formGroupExampleInput2"><mat-checkbox class="example-margin" (change)="onCheckboxChange($event)"></mat-checkbox ><b>Show results after exam</b></label>
+</div>
+</div>
+
+<!-- <button class="btn btn-secondary btn-sm float-left" (click)="goBack()"><mat-icon>arrow_back</mat-icon></button> -->
+<table class="table table-striped">
+
+  <thead>
+    <tr>
+      <th class="text-center">id</th>
+      <th class="text-center">name</th>
+      <th class="text-center">totalMarks</th>
+      <th class="text-center">numberOfQuestions</th>
+      <th >selectPaper</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let paper of papers let i=index">
+     <td class="text-center">{{paper.id}}</td>
+      <td class="text-center">{{paper.name}}</td>
+      <td class="text-center">{{paper.totalMarks}}</td>
+      <td class="text-center">{{paper.numberOfQuestions}}</td>
+
+      <td>
+        <input class="radio_button text-center ml-4" type="radio" [(ngModel)]="selected" [value]="paper.id" (click)="addpaper(paper.id)">
+      </td>
+    </tr>
+</tbody>
+ </table>
+
+<button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addexam(this.scheduleExam)" >Schedule Exam</button>
+<!-- <button class="btn btn-danger ml-3" type="reset">Clear</button> -->
+<button class="btn btn-secondary ml-3" (click)="goBack()">Go Back</button>

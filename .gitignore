@@ -1,0 +1,22 @@
+
+# Environment and secret files
+.env
+.env.*
+!.env.example
+
+# Java build output
+**/target/
+
+# Node and Angular build output
+**/node_modules/
+**/dist/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Operating system files
+Thumbs.db
+.DS_Store
+*.lnk

@@ -1,0 +1,380 @@
+<!-- <div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row ml-2">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Select Programming language</mat-label>
+        <mat-select [(ngModel)]="selectedLanguage" name="language">
+          <mat-option value="java">Java</mat-option>
+          <mat-option value="py">Python</mat-option>
+          <mat-option value="c">C</mat-option>
+          <mat-option value="cpp">C++</mat-option>
+          <mat-option value="go">GoLang</mat-option>
+          <mat-option value="cs">C#</mat-option>
+          <mat-option value="js">JavaScript</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <div class="code-editor">
+        <ngx-codemirror [(ngModel)]="code" [options]="codeMirrorOptions"></ngx-codemirror> -->
+
+                                                     <!-- <button class="mt-2" mat-raised-button color="primary" (click)="runCode(code)">Run Code</button> 27.08.2026 -->
+         <!-- <button class="mt-2" mat-raised-button color="primary" (click)="runCode()">Run Code</button>
+        <button class="mt-2" mat-raised-button color="primary" (click)="submitCode(code)"
+          [disabled]="!runCodeSuccessfull">Submit Code</button>
+        <br>
+
+        <h2>Number of testcases passed {{passedTestCases}} / {{Testcase?.length}}</h2>
+      </div>
+
+    </div>
+
+    <div class="row mt-4 ml-2"> -->
+       <!-- <textarea *ngFor="let item of codeOutput" placeholder="your coding output">{{item?.output}}</textarea> -->
+                                                                <!-- The below lines of code is added newly to show the test cases pass/fail percentage and output area (line 36-77)  27.08.2026-->
+      <!-- Code Output -->
+<!-- ================= CODE OUTPUT ================= -->
+
+<!-- <div class="row mt-4 ml-2">
+  <div class="col-md-8">
+
+    <h3 class="section-heading">
+      Code Output
+    </h3>
+
+    <textarea
+      class="form-control output-box"
+      rows="6"
+      placeholder="Your coding output"
+      [value]="codeOutput"
+      readonly>
+    </textarea>
+
+  </div>
+</div> -->
+
+
+<!-- ================= TEST CASE RESULT ================= -->
+
+<!-- <div class="row mt-4 ml-2" *ngIf="showResult">
+  <div class="col-md-8">
+
+    <div class="result-card">
+
+      <h3 class="section-heading">
+        Test Case Result
+      </h3>
+
+      <div class="result-row">
+        <span class="result-label">
+          Test Cases Passed
+        </span>
+
+        <span class="result-value">
+          {{ passedTestCases }} / {{ Testcase?.length }}
+        </span>
+      </div>
+
+
+      <div class="result-row">
+        <span class="result-label">
+          Score
+        </span>
+
+        <span class="result-value">
+          {{ passedPercentage | number:'1.0-2' }}%
+        </span>
+      </div>
+
+
+      <div class="result-row">
+        <span class="result-label">
+          Status
+        </span>
+
+        <span
+          class="status"
+          [ngClass]="{
+            'status-accepted': executionStatus === 'Accepted',
+            'status-wrong': executionStatus === 'Wrong Answer',
+            'status-error':
+              executionStatus === 'Compilation Error' ||
+              executionStatus === 'Execution Error'
+          }">
+
+          <span *ngIf="executionStatus === 'Accepted'">
+            ✓ Accepted
+          </span>
+
+          <span *ngIf="executionStatus === 'Wrong Answer'">
+            ✗ Wrong Answer
+          </span>
+
+          <span *ngIf="executionStatus === 'Compilation Error'">
+            ✗ Compilation Error
+          </span>
+
+          <span *ngIf="executionStatus === 'Execution Error'">
+            ✗ Execution Error
+          </span>
+
+          <span *ngIf="executionStatus === 'No Test Cases'">
+            No Test Cases
+          </span>
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+    </div>
+  </div>
+</div> -->
+
+<!-- The codes which are shifted left are old and the code which is commented is new -->
+
+
+
+<div class="bootstrap-wrapper">
+
+  <div class="container">
+
+    <!-- ================= PROGRAMMING LANGUAGE ================= -->
+
+    <div class="row language-row">
+      <div class="col-md-4">
+
+        <mat-form-field appearance="fill" class="language-select">
+          <mat-label>Select Programming Language</mat-label>
+
+          <mat-select
+            [(ngModel)]="selectedLanguage"
+            name="language">
+
+            <mat-option value="java">Java</mat-option>
+            <mat-option value="py">Python</mat-option>
+            <mat-option value="c">C</mat-option>
+            <mat-option value="cpp">C++</mat-option>
+            <mat-option value="go">GoLang</mat-option>
+            <mat-option value="cs">C#</mat-option>
+            <mat-option value="js">JavaScript</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+    </div>
+
+
+    <!-- ================= CODE EDITOR ================= -->
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <div class="code-editor">
+
+          <h3 class="section-heading">
+            Code Editor
+          </h3>
+<div class="coding-instruction">
+  <strong>💡 Coding Instruction:</strong>
+
+  <span>
+    Use the class declaration format:
+  </span>
+
+  <code>
+    public class YourClassName {{ '{' }} <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;// Write your code here <br>
+    {{ '}' }}
+  </code>
+
+  <span>
+    You may replace <b>YourClassName</b> with any valid class name of your choice.
+  </span>
+</div>
+          <ngx-codemirror
+  [(ngModel)]="code"
+  (ngModelChange)="emitCodingState()"
+  [options]="codeMirrorOptions">
+</ngx-codemirror>
+
+
+
+
+          <!-- ================= BUTTONS ================= -->
+
+          <div class="button-section">
+
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="runCode()">
+
+              Run Code
+
+            </button>
+
+
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="submitCode(code)"
+              [disabled]="!runCodeSuccessfull">
+
+              Submit Code
+
+            </button>
+
+          </div>
+
+
+          <!-- ================= TEST CASE COUNT ================= -->
+<!--
+          <div class="testcase-count">
+
+            <strong>
+              Test Cases Passed:
+            </strong>
+
+            <span>
+              {{ passedTestCases }} / {{ Testcase?.length }}
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div> -->
+
+
+    <!-- ================= OUTPUT + RESULT ================= -->
+
+    <div
+      class="row result-section"
+      *ngIf="showResult || codeOutput">
+
+      <!-- ================= CODE OUTPUT ================= -->
+
+      <div class="col-md-6">
+
+        <div class="output-card">
+
+          <h3 class="card-heading">
+            Code Output
+          </h3>
+
+          <textarea
+            class="form-control output-box"
+            rows="8"
+            placeholder="Your coding output"
+            [value]="codeOutput"
+            readonly>
+          </textarea>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= TEST CASE RESULT ================= -->
+
+      <div
+        class="col-md-6"
+        *ngIf="showResult">
+
+        <div class="result-card">
+
+          <h3 class="card-heading">
+            Test Case Result
+          </h3>
+
+
+          <!-- Test Cases -->
+
+          <div class="result-row">
+
+            <span class="result-label">
+              Test Cases Passed
+            </span>
+
+            <span class="result-value">
+              {{ passedTestCases }} / {{ Testcase?.length }}
+            </span>
+
+          </div>
+
+
+          <!-- Score -->
+
+          <div class="result-row">
+
+            <span class="result-label">
+              Score
+            </span>
+
+            <span class="result-value">
+              {{ passedPercentage | number:'1.0-2' }}%
+            </span>
+
+          </div>
+
+
+          <!-- Status -->
+
+          <div class="result-row">
+
+            <span class="result-label">
+              Status
+            </span>
+
+            <span
+              class="status"
+              [ngClass]="{
+                'status-accepted': executionStatus === 'Accepted',
+                'status-wrong': executionStatus === 'Wrong Answer',
+                'status-error':
+                  executionStatus === 'Compilation Error' ||
+                  executionStatus === 'Execution Error'
+              }">
+
+              <span *ngIf="executionStatus === 'Accepted'">
+                ✓ Accepted
+              </span>
+
+              <span *ngIf="executionStatus === 'Wrong Answer'">
+                ✗ Wrong Answer
+              </span>
+
+              <span *ngIf="executionStatus === 'Compilation Error'">
+                ✗ Compilation Error
+              </span>
+
+              <span *ngIf="executionStatus === 'Execution Error'">
+                ✗ Execution Error
+              </span>
+
+              <span *ngIf="executionStatus === 'No Test Cases'">
+                No Test Cases
+              </span>
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,64 @@
+
+.icon-spacing {
+  margin-right: 8px;
+}
+
+.button-text {
+  margin-top: -2px;
+}
+
+.side-nav-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+}
+.side-nav-button .mat-icon {
+  padding-right: 1.5rem;
+  margin-right: 0rem;
+  border-right: 0.4rem;
+}
+
+
+
+* {
+  background-color: rgb(168, 205, 240);
+
+}
+
+
+.matlistitem:hover  .hove {
+  background-color: #1f2937;
+  transition-duration: 0.3s;
+  color: white;
+  transform: translateY(-2px) scale(1.010);
+}
+
+
+
+.mat-raised-button :hover {
+  background-color: transparent;
+  color: inherit;
+  box-shadow: none;
+  transform: translateY(-2px) scale(1.010);
+}
+
+button,span,mat-icon{
+
+  background-color: rgb(168, 205, 240);
+}
+
+
+button.active {
+  background-color: #1f2937;
+  transition-duration: 1s;
+  color: white;
+}
+
+button.active .hove{
+  background-color: #1f2937;
+  transition-duration: 1s;
+  color: white;
+}

@@ -1,0 +1,46 @@
+
+<form [formGroup]="questionForm" class="ml-2 mt-2">
+
+  <div class="mt-4">
+    <mat-form-field appearance="fill" classs="left">
+      <mat-label>Select a subject</mat-label>
+      <mat-select [(ngModel)]="selectedsubject" name="selectedSubject" [ngModelOptions]="{standalone: true}"
+        (selectionChange)="onSubjectSelection()">
+        <mat-option *ngFor="let subject of uniqueSubjectNames" [value]="subject">{{ subject }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="right ml-3">
+      <mat-label>Select a topic</mat-label>
+      <mat-select [(ngModel)]="subject_id" name="subject_id" [formControl]="subjectControl">
+        <mat-option *ngFor="let subject of  filteredTopics" [value]="subject.id">{{ subject.description }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="float-left mr-4 arrow"  (click)="goBack()"><mat-icon>arrow_back</mat-icon></button>
+   </div>
+
+
+  <div class="form-group ml-3">
+    <div id="question-editor">
+      <label for="question">Question:</label>
+    <ckeditor [editor]="Editor" formControlName="question" [(ngModel)]="questionContent" name="content" ></ckeditor>
+    </div>
+  </div>
+  <div *ngFor="let input of inputs; let i = index" class="ml-3">
+    <label for="input-{{i}}">Input {{i + 1}}:</label>
+    <input type="text" id="input-{{i}}" name="input{{i}}" [(ngModel)]="input.input" [ngModelOptions]="{standalone: true}">
+    &nbsp;
+    <label for="output-{{i}}">Expected output {{i + 1}}:</label>
+    <input type="text" id="output-{{i}}" name="output{{i}}" [(ngModel)]="input.output" [ngModelOptions]="{standalone: true}">
+  </div>
+  <button type="button" class="btn btn-primary btn-sm mt-2 ml-3" (click)="addInput()">
+  Add Input
+</button>
+
+<button type="button" class="btn btn-warning btn-sm mt-2" (click)="removeInput()">
+  Remove Input
+</button>
+
+  <button class="btn btn-success btn-sm mt-2 submit" type="submit" (click)="onSubmit(subject_id)">Save Question</button>
+  <button class="btn btn-danger btn-sm mt-2 ml-2" type="reset" (click)="clearForm()">Clear</button>
+</form>

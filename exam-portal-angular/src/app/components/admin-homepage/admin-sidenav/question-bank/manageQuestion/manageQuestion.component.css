@@ -1,0 +1,72 @@
+.demo-table {
+  width: 100%;
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+}
+
+.demo-button + .demo-button {
+  margin-left: 8px;
+}
+
+.modal-dialog {
+  width:500rem;
+  /* max-width: 400px; */
+  max-height: 200px;
+}
+
+
+
+.form-group {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.mat-form-field {
+  position: static;
+  display: block;
+}
+
+.mat-form-field {
+  z-index: 9999;
+}
+
+th{
+  color: rgb(243, 248, 248);
+  background-color:#1f2937;
+}
+
+thead
+{
+  background-color:#1f2937;
+  width:150%;
+}
+
+.container{
+  width:150%;
+}
+
+.heading{
+  padding-left:8rem;
+}
+.noquestionfound{
+
+  font-size: 25px;
+
+}
+
+.arrow{
+  border: none;
+  background-color: rgb(203, 220, 236);
+}
+
+.arrow:hover{
+  transform: scale(1.2);
+}
+
+.coding-editor {
+  min-height: 200px;
+  overflow-y: auto;
+  white-space: normal;
+}
