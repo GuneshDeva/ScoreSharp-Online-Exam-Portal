@@ -126,4 +126,4 @@ Then open `http://localhost:4200` in your browser. The backend services must alr
 
 ## Screenshots source
 
-Screenshots in this repository were extracted from the project's ScoreSharp documentation for demonstration purposes..
+Screenshots in this repository were extracted from the project's ScoreSharp documentation for demonstration purposes.
